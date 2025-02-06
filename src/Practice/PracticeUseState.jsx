@@ -29,7 +29,7 @@ function UseStateTwo() {
     return (
         <div>
             <h1>랜덤 숫자 : {number}</h1>
-            <button onClick={() => setNumber(Math.random())}>랜덤 숫자 생성</button>
+            <button onClick={() => setNumber(Math.floor(Math.random() * 100) + 1)}>랜덤 숫자 생성</button>
         </div>
     );
 }
