@@ -15,16 +15,19 @@ function UseStateOne() {
 
     return (
         <div>
-            <input type="text" placeholder="텍스트를 입력하세요."/>
-            value={text}
-            onChange={(e) => setText(e.target.value)}
+            <input type="text" placeholder="텍스트를 입력하세요."
+            value={text} onChange={(e) => setText(e.target.value)}
+            />
+
+            <p>입력한 값 : {text}</p>
         </div>
+
     );
 }
 
 function UseStateTwo() {
 
-    const [number, setNumber] = useState(Math.random());
+    const [number, setNumber] = useState(Math.floor(Math.random() * 100) + 1);
 
     return (
         <div>

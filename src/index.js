@@ -4,12 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ChapUseState from "./Chapter/ChapUseState";
+import PracticeUseState from "./Practice/PracticeUseState";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
       {/* <App /> */}
-      <ChapUseState />
+      {/*<ChapUseState />*/}
+        <PracticeUseState/>
   </React.StrictMode>
 );
 
