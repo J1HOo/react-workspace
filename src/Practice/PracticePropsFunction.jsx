@@ -13,22 +13,22 @@ const PracticePropsFunction = () => {
 };
 
 // 자식 컴포넌트 (버튼 클릭 시 부모의 메시지 변경)
-const Child1 = ({ handleChangeMessage }) => {
-    return <button onClick={handleChangeMessage}>메시지 변경</button>;
+const Child1 = ({ changeMessage }) => {
+    return <button onClick={changeMessage}>메시지 변경</button>;
 };
 
 // 부모 컴포넌트
 const Parent1 = () => {
     const [message, setMessage] = useState("기본 메시지");
 
-    const changeMessage  = () => {
+    const handleChangeMessage  = () => {
         setMessage("버튼이 클릭되었습니다!");
     };
 
     return (
         <div>
             <h1>{message}</h1>
-            <Child1 handleChangeMessage={changeMessage} />
+            <Child1 changeMessage={handleChangeMessage} />
         </div>
     );
 };
@@ -108,7 +108,5 @@ const Parent5 = () => {
         </div>
     );
 };
-
-
 
 export default PracticePropsFunction;
