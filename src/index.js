@@ -5,13 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ChapUseState from "./Chapter/ChapUseState";
 import PracticeUseState from "./Practice/PracticeUseState";
+import PracticeProps from "./Practice/PracticeProps";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
       {/* <App /> */}
       {/*<ChapUseState />*/}
-        <PracticeUseState/>
+      {/*  <PracticeUseState/>*/}
+      <PracticeProps/>
   </React.StrictMode>
 );
 
