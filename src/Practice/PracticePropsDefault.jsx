@@ -23,7 +23,7 @@ const NameDisplay = ({name}) => {
 
 // 기본값 설정
 NameDisplay.defaultProps = {
-    name: "알 수 없음"
+    name: "이름 없음"
 };
 
 const AgeDisplay = ({age}) => {
