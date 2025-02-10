@@ -14,6 +14,7 @@ import PracticePropsFunction from "./Practice/PracticePropsFunction";
 import ChapPropsDefault from "./Chapter/ChapProps/ChapPropsDefault";
 import PracticePropsDefault from "./Practice/PracticePropsDefault";
 import ChapPropsArray from "./Chapter/ChapProps/ChapPropsArray";
+import PracticePropsArray from "./Practice/PracticePropsArray";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -30,8 +31,10 @@ root.render(
       {/*<PracticePropsFunction/>*/}
       {/*<ChapPropsDefault/>*/}
       {/*<PracticePropsDefault/>*/}
-      <ChapPropsArray/>
+      {/*<ChapPropsArray/>*/}
+        <PracticePropsArray/>
   </React.StrictMode>
+
 );
 
 // If you want to start measuring performance in your app, pass a function
