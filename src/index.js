@@ -13,6 +13,7 @@ import ChapComponent from "./Chapter/ChapComponent";
 import PracticePropsFunction from "./Practice/PracticePropsFunction";
 import ChapPropsDefault from "./Chapter/ChapProps/ChapPropsDefault";
 import PracticePropsDefault from "./Practice/PracticePropsDefault";
+import ChapPropsArray from "./Chapter/ChapProps/ChapPropsArray";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -28,7 +29,8 @@ root.render(
       {/*<ChapPropsFunction/>*/}
       {/*<PracticePropsFunction/>*/}
       {/*<ChapPropsDefault/>*/}
-      <PracticePropsDefault/>
+      {/*<PracticePropsDefault/>*/}
+      <ChapPropsArray/>
   </React.StrictMode>
 );
 
