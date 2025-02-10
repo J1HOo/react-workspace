@@ -79,13 +79,112 @@ const BookList = ({ books }) => {
             <ul>
                 {
                     books.map((book, index) => (
-                            <li key={index}>{book.title} (지은이: {book.author})</li>
+                            <li key={index}>{book.title} 지은이:({book.author})</li>
                     ))
                 }
             </ul>
         </div>
     );
 }
+
+const MusicPlay = ({songs}) => {
+    return (
+        <div>
+            <h2>🎵 음악 재생 목록</h2>
+            <ul>
+                {
+                    songs.map((song, index) => {
+                        return ( <li key={index}>{song.title || "재생 목록이 없습니다."} - {song.artist}</li> )
+                    })
+                }
+            </ul>
+        </div>
+    );
+};
+
+MusicPlay.defaultProps = {
+    songs: "재생 목록이 없습니다."
+}
+
+const Tod = ({ tasks }) => {
+    return (
+        <div>
+            <h2>✅ 할 일 목록</h2>
+            <ul>
+                {
+                    tasks.map((task, index) => (
+                        <li key={index}>
+                            <input type="checkbox" checked={task.done} readOnly />
+                            {task.task || "할 일이 없습니다." }
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    );
+};
+
+Tod.defaultProps = {
+    tasks: "할 일이 없습니다."
+}
+
+const TeamMembers = ({ teamMaker }) => {
+    return (
+        <div>
+            <h2>👥 팀원 목록</h2>
+            <ul>
+                {
+                    teamMaker.map((team, index) => {
+                      return ( <li key={index}>{team.name} {team.role}</li> )
+                    })
+                }
+            </ul>
+        </div>
+    );
+};
+
+TeamMembers.defaultProps = {
+    teamMaker: "등록된 팀원이 없습니다."
+}
+
+const ShoppingCart = ({ cartItems }) => {
+    return (
+        <div>
+            <h2>🛒 쇼핑 장바구니</h2>
+            <ul>
+                {
+                    cartItems.map((cart, index) => (
+                        <li key={index}>{cart.item} {cart.quantity} 개</li>
+                    ))
+                }
+            </ul>
+        </div>
+    );
+};
+
+ShoppingCart.defaultProps = {
+    cartItems: "장바구니가 비었습니다."
+}
+
+const EventSchedule = ({ events }) => {
+    return (
+        <div>
+            <h2>📅 행사 일정</h2>
+            <ul>
+                {
+                    events.map((event, index) => {
+                       return ( <li key={index}>{event.name} - {event.date}</li> )
+                    })
+                }
+            </ul>
+        </div>
+    );
+};
+
+EventSchedule.defaultProps = {
+    events: "예정된 행사가 없습니다."
+}
+
 
 const Parent = () => {
 
@@ -109,13 +208,51 @@ const Parent = () => {
         { title: "자바스크립트 완벽 가이드", author: "David Flanagan" }, { title: "리액트 프로그래밍", author: "김민수" }, { title: "모던 프론트엔드 개발", author: "이정환" }
     ];
 
-     return (
+    const songs = [
+        { title: "Attention", artist: "Charlie Puth" },
+        { title: "Shape of You", artist: "Ed Sheeran" },
+        { title: "Dynamite", artist: "BTS" },
+        { artist: "Black Pink" }
+];
+
+    const tasks = [
+        { task: "React 공부하기", done: false },
+        { task: "운동하기", done: true },
+        { task: "책 읽기", done: false },
+        { done: false }
+    ];
+
+    const teamMembers = [
+        { name: "김철수", role: "프론트엔드 개발자" },
+        { name: "박영희", role: "백엔드 개발자" },
+        { name: "이민호", role: "디자이너" },
+        { role: "시스템 개발자" }
+    ];
+
+    const cartItems = [
+        { item: "노트북", quantity: 1 },
+        { item: "무선 마우스", quantity: 2 },
+        { item: "키보드", quantity: 1 }
+    ];
+
+    const events = [
+        { name: "React 컨퍼런스", date: "2025-03-10" },
+        { name: "개발자 밋업", date: "2025-04-22" },
+        { name: "해커톤", date: "2025-05-15" }
+    ];
+
+    return (
         <div>
             <User users={userList} />
             <Product productList={productList} />
             <ScoreList scores={scores} />
             <Order orders={orders} />
             <BookList books={books} />
+            <MusicPlay songs={songs} />
+            <Tod tasks={tasks} />
+            <TeamMembers teamMaker={teamMembers} />
+            <ShoppingCart cartItems={cartItems} />
+            <EventSchedule events={events} />
         </div>
     )
 }
