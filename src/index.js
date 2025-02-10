@@ -8,9 +8,11 @@ import PracticeUseState from "./Practice/PracticeUseState";
 import PracticeProps from "./Practice/PracticeProps";
 import ChapArrowFunction from "./Chapter/ChapArrowFunction";
 import ChapNomalFunction from "./Chapter/ChapNormalFunction";
-import ChapProps from "./Chapter/ChapProps";
+import ChapProps from "./Chapter/ChapProps/ChapProps";
 import ChapComponent from "./Chapter/ChapComponent";
 import PracticePropsFunction from "./Practice/PracticePropsFunction";
+import ChapPropsDefault from "./Chapter/ChapProps/ChapPropsDefault";
+import PracticePropsDefault from "./Practice/PracticePropsDefault";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -24,7 +26,9 @@ root.render(
       {/*<ChapProps/>*/}
       {/*<PracticeProps/>*/}
       {/*<ChapPropsFunction/>*/}
-      <PracticePropsFunction/>
+      {/*<PracticePropsFunction/>*/}
+      {/*<ChapPropsDefault/>*/}
+      <PracticePropsDefault/>
   </React.StrictMode>
 );
 
