@@ -6,14 +6,25 @@ import reportWebVitals from './reportWebVitals';
 import ChapUseState from "./Chapter/ChapUseState";
 import PracticeUseState from "./Practice/PracticeUseState";
 import PracticeProps from "./Practice/PracticeProps";
+import ChapArrowFunction from "./Chapter/ChapArrowFunction";
+import ChapNomalFunction from "./Chapter/ChapNormalFunction";
+import ChapProps from "./Chapter/ChapProps";
+import ChapComponent from "./Chapter/ChapComponent";
+import PracticePropsFunction from "./Practice/PracticePropsFunction";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
       {/* <App /> */}
       {/*<ChapUseState />*/}
-      {/*  <PracticeUseState/>*/}
-      <PracticeProps/>
+      {/* <PracticeUseState/>*/}
+      {/*<ChapComponent/>*/}
+      {/*<ChapArrowFunction/>*/}
+      {/*<ChapNormalFunction/>*/}
+      {/*<ChapProps/>*/}
+      {/*<PracticeProps/>*/}
+      {/*<ChapPropsFunction/>*/}
+      <PracticePropsFunction/>
   </React.StrictMode>
 );
 
