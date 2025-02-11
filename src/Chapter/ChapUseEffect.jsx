@@ -93,6 +93,41 @@ const APIRandomJoke = () => {
     );
 };
 
+const APIUser = () => {
+    const [userInfo, setUserInfo] = useState(null);
+
+    const userBtn = () => {
+        axios.get('https://randomuser.me/api/')
+            .then(res => {
+                setUserInfo(res.data.results[0]);
+            })
+            .catch(() => {
+                alert("API 주소에서 데이터를 가져올 수 없습니다.");
+            });
+    };
+
+    useEffect(() => {
+        userBtn();
+    }, []);
+
+    return (
+        <div>
+            <h2>랜덤 유저 정보</h2>
+            {userInfo ? (
+                <div>
+                    <p>
+                        이름: {userInfo.name.first} {userInfo.name.last}
+                    </p>
+                    <p>이메일: {userInfo.email}</p>
+                    <img src={userInfo.picture.medium} alt="User" />
+                </div>
+            ) : (
+                <p>로딩 중...</p>
+            )}
+            <button onClick={fetchUserInfo}>새로운 유저 정보 가져오기</button>
+        </div>
+    );
+};
 
 const PracticeUseEffectAxios = () => {
 
@@ -100,6 +135,8 @@ const PracticeUseEffectAxios = () => {
         <div>
             <APIDog/>
             <APIRandomJoke/>
+            <APIUser/>
+
         </div>
         )
 
