@@ -47,6 +47,33 @@ const AxiosApiCat = () => {
     );
 }
 
+const APIDog = () => {
+    const [dog, setDog] = useState(null);
+
+    const dogBtn = () => {
+        axios.get('https://api.thecatapi.com/v1/images/search')
+            .then(res => { setDog(res.data[0].url) })
+            .catch(() => { alert("API 주소에서 데이터를 가져올 수 없습니다.") });
+    }
+
+    useEffect(() => {
+        dogBtn();
+    }, []);
+
+    return (
+        <div>
+            <h1>랜덤 강아지 사진</h1>
+            { dog ? <img src={dog} alt="dog" style={{width: '300px'}}/> : <h2> 로딩 중... </h2> }
+            <button onClick={dogBtn}>강아지 사진 새로고침</button>
+        </div>
+    );
+}
+
+const PracticeUseEffectAxios = () => {
+
+
+}
+
 
 const ChapUseEffect = () => {
     /*
@@ -73,7 +100,9 @@ const ChapUseEffect = () => {
     return (
         <div>
             {/*<FetchAPiCat/>*/}
-            <AxiosApiCat/>
+            {/*<AxiosApiCat/>*/}
+            <APIDog/>
+            {/*<PracticeUseEffectAxios/>*/}
         </div>
     );
 }
