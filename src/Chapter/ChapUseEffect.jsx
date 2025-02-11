@@ -124,7 +124,7 @@ const APIUser = () => {
             ) : (
                 <p>로딩 중...</p>
             )}
-            <button onClick={fetchUserInfo}>새로운 유저 정보 가져오기</button>
+            <button onClick={userBtn}>새로운 유저 정보 가져오기</button>
         </div>
     );
 };
