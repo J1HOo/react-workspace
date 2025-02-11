@@ -94,7 +94,7 @@ const MusicPlay = ({songs}) => {
             <ul>
                 {
                     songs.map((song, index) => {
-                        return ( <li key={index}>{song.title || "재생 목록이 없습니다."} - {song.artist}</li> )
+                        return ( <li key={index}>{song.title ? song.title : "재생 목록이 없습니다."} - {song.artist}</li> )
                     })
                 }
             </ul>
@@ -103,7 +103,10 @@ const MusicPlay = ({songs}) => {
 };
 
 MusicPlay.defaultProps = {
-    songs: "재생 목록이 없습니다."
+    songs: [{
+            title : "재생 목록이 없습니다.",
+            artist : "아티스트가 미상."
+            }]
 }
 
 const Tod = ({ tasks }) => {
@@ -115,6 +118,7 @@ const Tod = ({ tasks }) => {
                     tasks.map((task, index) => (
                         <li key={index}>
                             <input type="checkbox" checked={task.done} readOnly />
+                            {task.done ? "완료 - " : "미완료 - "}
                             {task.task || "할 일이 없습니다." }
                         </li>
                     ))

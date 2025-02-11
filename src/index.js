@@ -13,6 +13,7 @@ import ChapPropsDefault from "./Chapter/ChapProps/ChapPropsDefault";
 import PracticePropsDefault from "./Practice/PracticePropsDefault";
 import ChapPropsArray from "./Chapter/ChapProps/ChapPropsArray";
 import PracticePropsArray from "./Practice/PracticePropsArray";
+import ChapUseEffect from "./Chapter/ChapUseEffect";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -30,7 +31,8 @@ root.render(
       {/*<ChapPropsDefault/>*/}
       {/*<PracticePropsDefault/>*/}
       {/*<ChapPropsArray/>*/}
-        <PracticePropsArray/>
+      {/*  <PracticePropsArray/>*/}
+      <ChapUseEffect/>
   </React.StrictMode>
 
 );
