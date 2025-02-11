@@ -51,7 +51,7 @@ const APIDog = () => {
     const [dog, setDog] = useState(null);
 
     const dogBtn = () => {
-        axios.get('https://api.thecatapi.com/v1/images/search')
+        axios.get('https://api.thedogapi.com/v1/images/search')
             .then(res => { setDog(res.data[0].url) })
             .catch(() => { alert("API 주소에서 데이터를 가져올 수 없습니다.") });
     }
@@ -69,8 +69,39 @@ const APIDog = () => {
     );
 }
 
+const APIRandomJoke = () => {
+    const [setup, setSetup] = useState(null); // 농담 빌드업
+    const [delivery, setDelivery] = useState(null); // 농담 대답
+
+    useEffect(() => {
+        axios.get('https://v2.jokeapi.dev/joke/Any?type=twopart')
+            .then(res => {
+                setSetup(res.data.setup);
+                setDelivery(res.data.delivery);
+            })
+            .catch(() => {
+                alert("API 주소에서 데이터를 가져올 수 없습니다.");
+            });
+    }, []);
+
+    return (
+        <div>
+            <h1>랜덤 농담</h1>
+            { setup ? <h2> {setup} </h2> : <h2> 로딩 중... </h2> }
+            { delivery ? <h2> {delivery} </h2> : <h2> 로딩 중... </h2> }
+        </div>
+    );
+};
+
+
 const PracticeUseEffectAxios = () => {
 
+    return (
+        <div>
+            <APIDog/>
+            <APIRandomJoke/>
+        </div>
+        )
 
 }
 
@@ -101,8 +132,7 @@ const ChapUseEffect = () => {
         <div>
             {/*<FetchAPiCat/>*/}
             {/*<AxiosApiCat/>*/}
-            <APIDog/>
-            {/*<PracticeUseEffectAxios/>*/}
+            <PracticeUseEffectAxios/>
         </div>
     );
 }
