@@ -21,8 +21,8 @@ const PizzaDetail = () => {
     useEffect(() => {
         // /api/pizzas/:id 엔드포인트에서 피자 데이터를 가져옵니다.
         axios.get(`/api/pizzas/${id}`)
-            .then(response => {
-                setPizza(response.data);
+            .then(res => {
+                setPizza(res.data);
             })
             .catch(() => {
                 alert("피자 데이터를 가져올 수 없습니다.");
