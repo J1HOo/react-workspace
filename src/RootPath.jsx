@@ -1,12 +1,18 @@
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import PizzaList from "./BackendAPI/PizzaList";
+import PizzaDetail from "./BackendAPI/PizzaDetail";
 
-const RootPath = () => {
+// const RootPath = () => {
 
+function RootPath() {
 
     return (
-        <div>
-
-        </div>
+        <Router>
+            <Routes>
+                <Route path="/" element={<PizzaList />} />
+                <Route path="/pizzas/detail/:id" element={<PizzaDetail />} />
+            </Routes>
+        </Router>
     )
 }
 
