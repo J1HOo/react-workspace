@@ -14,6 +14,8 @@ import PracticePropsDefault from "./Practice/PracticePropsDefault";
 import ChapPropsArray from "./Chapter/ChapProps/ChapPropsArray";
 import PracticePropsArray from "./Practice/PracticePropsArray";
 import ChapUseEffect from "./Chapter/ChapUseEffect";
+import PizzaList from "./BackendAPI/PizzaList";
+import RootPath from "./RootPath";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -32,7 +34,9 @@ root.render(
       {/*<PracticePropsDefault/>*/}
       {/*<ChapPropsArray/>*/}
       {/*  <PracticePropsArray/>*/}
-      <ChapUseEffect/>
+      {/*<ChapUseEffect/>*/}
+      <PizzaList/>
+      <RootPath/>
   </React.StrictMode>
 
 );

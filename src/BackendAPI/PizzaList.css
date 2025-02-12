@@ -1,0 +1,11 @@
+.pizza-list {
+    margin: 20px auto;
+}
+
+.pizza-item {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+}
