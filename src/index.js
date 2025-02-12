@@ -5,7 +5,6 @@ import ChapUseState from "./Chapter/ChapUseState";
 import PracticeUseState from "./Practice/PracticeUseState";
 import PracticeProps from "./Practice/PracticeProps";
 import ChapArrowFunction from "./Chapter/ChapArrowFunction";
-import ChapNomalFunction from "./Chapter/ChapNormalFunction";
 import ChapProps from "./Chapter/ChapProps/ChapProps";
 import ChapComponent from "./Chapter/ChapComponent";
 import PracticePropsFunction from "./Practice/PracticePropsFunction";
