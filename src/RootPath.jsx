@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom"; // Switch > Router
 import PizzaList from "./BackendAPI/PizzaList";
 import PizzaDetail from "./BackendAPI/PizzaDetail";
 
