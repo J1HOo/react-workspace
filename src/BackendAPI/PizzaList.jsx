@@ -44,6 +44,8 @@ const  PizzaList = () => {
     return (
         <div>
             <h1>🍕피자 메뉴</h1>
+            <Link to={"/pizzas/add"}>메뉴 추가히기</Link>
+
             <div className="pizza-list">
                 { pizzas.map( (pizza) => {
                     return <div key={pizza.id} className="pizza-item">

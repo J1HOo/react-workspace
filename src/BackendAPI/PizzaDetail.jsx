@@ -1,6 +1,7 @@
-import {useNavigate, useParams} from "react-router-dom";
+import {Link, useNavigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
+import PizzaForm from "./PizzaForm";
 
 
 const PizzaDetail = () => {
@@ -21,7 +22,7 @@ const PizzaDetail = () => {
     useEffect(() => {
         // /api/pizzas/:id 엔드포인트에서 피자 데이터를 가져옵니다.
         axios.get(`/api/pizzas/${id}`)
-            .then(res => {
+            .then((res) => {
                 setPizza(res.data);
             })
             .catch(() => {
@@ -36,9 +37,12 @@ const PizzaDetail = () => {
     return (
         <div>
             <h1>피자 상세보기</h1>
-            <p>가격 : {pizza.price} 원</p>
+            <p>가격 : {pizza?.price} 원</p>
+            {/* 초기 값이 null인 상태에서 페이지가 페이지가 로드 될 때 값이 들어가는 속도 보다 초기 값이 먼저 들어가게 되면 null이 되므로
+             그 잠깐의 null이 들어가도 에러를 뱉지 않도록 처리 -> 옵셔널 체이닝 */}
             <p>피자 설명 상세보기 : {pizza.description}</p>
             <button onClick={backBtn}>돌아가기</button>
+
 
         </div>
     )
