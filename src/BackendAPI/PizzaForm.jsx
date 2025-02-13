@@ -25,6 +25,17 @@ const PizzaFormChapOne = () => {
     const [pizzaImage, setPizzaImage] = useState(null);
 
     const handleChangeValue = (e) => {
+    if (!pizzaName || !pizzaPrice || !pizzaDescription) {
+
+        let msg = '필수 입력 : \n';
+        if (!pizzaName) msg += '피자 이름을 입력하세요.\n';
+        if (!pizzaPrice) msg += '피자 가격을 입력하세요.\n';
+        if (!pizzaDescription) msg += '피자 설명을 입력하세요.\n';
+
+        alert(msg);
+        return; // return을 사용하여 함수를 종료시키는 이유 : 모든 항목을 입력하지 않았을 때 다음 코드가 실행되지 않도록 하기 위함
+    }
+
         const {name, value} = e.target;
 
         if (name === 'pizzaName') {
@@ -58,8 +69,8 @@ const PizzaFormChapOne = () => {
     )
 }
 
-
 const PizzaFormChapTwo = () => {
+
     const [pizzaName, setPizzaName] = useState('');
     const [pizzaPrice, setPizzaPrice] = useState('');
     const [pizzaDescription, setPizzaDescription] = useState('');
