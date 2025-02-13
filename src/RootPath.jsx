@@ -2,6 +2,8 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom"; // Swit
 import PizzaList from "./BackendAPI/PizzaList";
 import PizzaDetail from "./BackendAPI/PizzaDetail";
 import PizzaForm from "./BackendAPI/PizzaForm";
+import Footer from "./Layout/Footer";
+import Header from "./Layout/Header";
 
 // const RootPath = () => {
 
@@ -19,6 +21,9 @@ function RootPath() {
              현재는 2번 방식을 사용한 상태이며,
              RootPath 와 같이 사용할 수 있음
                */}
+
+            <Header />
+
             <Routes>
                 {/*
                 React 에서 경로로 표기하는 Component 와
@@ -43,6 +48,9 @@ function RootPath() {
                 <Route path="/pizzas/detail/:id" element={<PizzaDetail />} />
                 <Route path="/pizzas/add" element={<PizzaForm />} />
             </Routes>
+
+        <Footer />
+            
         </Router>
     )
 }
