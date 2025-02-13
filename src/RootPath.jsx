@@ -4,6 +4,10 @@ import PizzaDetail from "./BackendAPI/PizzaDetail";
 import PizzaForm from "./BackendAPI/PizzaForm";
 import Footer from "./Layout/Footer";
 import Header from "./Layout/Header";
+import Home from "./pages/Home";
+import CafeList from "./pages/CafeList";
+import CafeDetail from "./pages/CafeDetail";
+import CafeForm from "./pages/CafeForm";
 
 // const RootPath = () => {
 
@@ -44,13 +48,18 @@ function RootPath() {
                     path 에서는 /:id 와 같이 작성하며
                     to 에서는 ${id} 와 같이 작성
                  */}
-                <Route path="/" element={<PizzaList />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/cafes" element={<CafeList />} />
+                <Route path="/cafes/:id" element={<CafeDetail />} />
+                <Route path="/cafes/add" element={<CafeForm />}  />
+
+                <Route path="/pizzas" element={<PizzaList />} />
                 <Route path="/pizzas/detail/:id" element={<PizzaDetail />} />
                 <Route path="/pizzas/add" element={<PizzaForm />} />
             </Routes>
 
         <Footer />
-            
+
         </Router>
     )
 }
