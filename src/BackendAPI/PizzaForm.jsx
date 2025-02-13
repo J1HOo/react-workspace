@@ -16,9 +16,13 @@ const PizzaForm = () => {
         formData.append('imagePath', image);
 
         axios.post('/api/pizzas', formData, {headers: {'Content-Type': 'multipart/form-data'}})
-            .then(() => {
+            .then((res) => {
+                console.log(res.data);
                 alert('피자가 추가되었습니다.');
-                return "/pizzas";
+                setName('');
+                setPrice('');
+                setDescription('');
+                setImage(null);
             })
             .catch(() => {
                 alert('피자 추가에 실패했습니다.');
